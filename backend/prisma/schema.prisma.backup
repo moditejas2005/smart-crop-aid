@@ -1,0 +1,167 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model chat_messages {
+  id         String                  @id @default(dbgenerated("(uuid())")) @db.Char(36)
+  user_id    String                  @db.Char(36)
+  message    String                  @db.Text
+  is_user    Boolean?                @default(true)
+  ai_model   String?                 @db.VarChar(50)
+  feedback   chat_messages_feedback?
+  created_at DateTime?               @default(now()) @db.Timestamp(0)
+  users      users                   @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "chat_messages_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model crops {
+  id                    String         @id @default(dbgenerated("(uuid())")) @db.Char(36)
+  user_id               String         @db.Char(36)
+  crop_name             String         @db.VarChar(100)
+  variety               String?        @db.VarChar(100)
+  planting_date         DateTime?      @db.Date
+  expected_harvest_date DateTime?      @db.Date
+  actual_harvest_date   DateTime?      @db.Date
+  status                crops_status?  @default(planted)
+  area                  Decimal?       @db.Decimal(10, 2)
+  lat                   Decimal?       @db.Decimal(10, 8)
+  lng                   Decimal?       @db.Decimal(11, 8)
+  soil_type             String?        @db.VarChar(100)
+  irrigation_type       String?        @db.VarChar(100)
+  notes                 String?        @db.Text
+  yield_amount          Decimal?       @db.Decimal(10, 2)
+  yield_unit            String?        @db.VarChar(20)
+  created_at            DateTime?      @default(now()) @db.Timestamp(0)
+  updated_at            DateTime?      @default(now()) @db.Timestamp(0)
+  users                 users          @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "crops_ibfk_1")
+  pest_reports          pest_reports[]
+
+  @@index([user_id], map: "user_id")
+}
+
+model market_prices {
+  id                String               @id @default(dbgenerated("(uuid())")) @db.Char(36)
+  crop_name         String               @db.VarChar(100)
+  variety           String?              @db.VarChar(100)
+  price             Decimal              @db.Decimal(10, 2)
+  unit              String               @db.VarChar(20)
+  market_name       String?              @db.VarChar(100)
+  location          String?              @db.VarChar(255)
+  region            String?              @db.VarChar(100)
+  date              DateTime             @db.Date
+  trend             market_prices_trend?
+  change_percentage Decimal?             @db.Decimal(5, 2)
+  created_at        DateTime?            @default(now()) @db.Timestamp(0)
+  updated_at        DateTime?            @default(now()) @db.Timestamp(0)
+}
+
+model notifications {
+  id         String              @id @default(dbgenerated("(uuid())")) @db.Char(36)
+  user_id    String              @db.Char(36)
+  title      String              @db.VarChar(255)
+  message    String              @db.Text
+  type       notifications_type?
+  is_read    Boolean?            @default(false)
+  action_url String?             @db.Text
+  created_at DateTime?           @default(now()) @db.Timestamp(0)
+  users      users               @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "notifications_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model pest_reports {
+  id                    String                         @id @default(dbgenerated("(uuid())")) @db.Char(36)
+  user_id               String                         @db.Char(36)
+  crop_id               String?                        @db.Char(36)
+  image_url             String                         @db.Text
+  pest_name             String?                        @db.VarChar(100)
+  confidence            Decimal?                       @db.Decimal(5, 2)
+  severity              pest_reports_severity?
+  description           String?                        @db.Text
+  ai_analysis           String?                        @db.Text
+  treatment_recommended String?                        @db.Text
+  treatment_applied     String?                        @db.Text
+  treatment_status      pest_reports_treatment_status? @default(pending)
+  lat                   Decimal?                       @db.Decimal(10, 8)
+  lng                   Decimal?                       @db.Decimal(11, 8)
+  created_at            DateTime?                      @default(now()) @db.Timestamp(0)
+  updated_at            DateTime?                      @default(now()) @db.Timestamp(0)
+  users                 users                          @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "pest_reports_ibfk_1")
+  crops                 crops?                         @relation(fields: [crop_id], references: [id], onUpdate: NoAction, map: "pest_reports_ibfk_2")
+
+  @@index([crop_id], map: "crop_id")
+  @@index([user_id], map: "user_id")
+}
+
+model users {
+  id                String          @id @default(dbgenerated("(uuid())")) @db.Char(36)
+  email             String          @unique(map: "email") @db.VarChar(255)
+  password_hash     String          @db.VarChar(255)
+  name              String          @db.VarChar(255)
+  phone             String?         @db.VarChar(20)
+  role              users_role?     @default(farmer)
+  location          String?         @db.VarChar(255)
+  farm_size         Decimal?        @db.Decimal(10, 2)
+  farm_lat          Decimal?        @db.Decimal(10, 8)
+  farm_lng          Decimal?        @db.Decimal(11, 8)
+  profile_image_url String?         @db.Text
+  created_at        DateTime?       @default(now()) @db.Timestamp(0)
+  updated_at        DateTime?       @default(now()) @db.Timestamp(0)
+  last_active       DateTime?       @default(now()) @db.Timestamp(0)
+  chat_messages     chat_messages[]
+  crops             crops[]
+  notifications     notifications[]
+  pest_reports      pest_reports[]
+}
+
+enum notifications_type {
+  weather
+  pest
+  price
+  crop
+  system
+}
+
+enum chat_messages_feedback {
+  helpful
+  not_helpful
+}
+
+enum users_role {
+  farmer
+  admin
+}
+
+enum pest_reports_severity {
+  low
+  medium
+  high
+  critical
+}
+
+enum crops_status {
+  recommended
+  planted
+  growing
+  harvested
+  failed
+}
+
+enum market_prices_trend {
+  up
+  down
+  stable
+}
+
+enum pest_reports_treatment_status {
+  pending
+  in_progress
+  completed
+}

@@ -1,0 +1,17 @@
+export default {
+  primary: '#32CD32',
+  secondary: '#FFFFFF',
+  accent: '#E8F5E9',
+  buttonGreen: '#43A047',
+  darkGreen: '#2E7D32',
+  lightGreen: '#A5D6A7',
+  text: '#1B5E20',
+  textLight: '#4A4A4A',
+  textWhite: '#FFFFFF',
+  border: '#C8E6C9',
+  error: '#D32F2F',
+  warning: '#F57C00',
+  background: '#F5F5F5',
+  cardBg: '#FFFFFF',
+  shadow: '#000000',
+};

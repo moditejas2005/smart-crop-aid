@@ -1,0 +1,5 @@
+flask
+flask-cors
+tensorflow==2.17.0
+Pillow
+gunicorn

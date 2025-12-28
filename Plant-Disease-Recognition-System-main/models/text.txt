@@ -1,0 +1,39 @@
+put model file here
+
+
+ Complete Flask API Integration
+Files Created:
+api_server.py - Complete Flask API that serves your Keras model
+requirements.txt - Python dependencies
+setup_api.bat/sh - Setup scripts for Windows/Linux
+test_api.py - API testing script
+Updated utils/modelInference.ts - React Native integration
+API Features:
+✅ Loads your existing model (pest_detection_model_pwp.keras)
+✅ Handles base64 images from React Native
+✅ Returns structured predictions with confidence scores
+✅ CORS enabled for mobile app requests
+✅ Health check endpoint for connection testing
+✅ All 38 disease classes supported
+API Endpoints:
+GET /api/health - Check if model is loaded
+POST /api/predict - Make disease predictions
+GET /api/classes - Get all available disease classes
+GET /api/disease-info/<id> - Get detailed disease information
+🚀 How to Use:
+1. Start the API Server:
+cd Plant-Disease-Recognition-System-main
+python api_server.py
+2. Test the API:
+python test_api.py
+3. Update React Native (if needed):
+In utils/modelInference.ts, change the API URL for device testing:
+
+const API_BASE_URL = 'http://192.168.1.100:5000'; // Your computer's IP
+🎯 Integration Flow:
+React Native app captures image
+Converts to base64 and sends to Flask API
+Flask API processes with your trained Keras model
+Returns prediction with confidence and crop information
+App displays results with treatment recommendations
+Your Keras model is now fully integrated and ready to use! The system will automatically use your trained model when the API server is running, falling back to Vision API or simulation if not available.
