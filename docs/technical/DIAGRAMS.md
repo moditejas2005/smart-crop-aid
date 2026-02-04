@@ -625,5 +625,5 @@ classDiagram
 ---
 
 <p align="center">
-Created for Smart Crop Aid v1.0.0 | December 2024
+Created for Smart Crop Aid v1.0.0 | December 2025
 </p>
