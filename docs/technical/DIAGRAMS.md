@@ -589,31 +589,31 @@ flowchart TD
 
 ```mermaid
 classDiagram
-    object farmerJohn {
-        id = "u123"
-        name = "John Doe"
-        role = "farmer"
-        location = "Punjab, India"
+    class farmerJohn {
+        id : "u123"
+        name : "John Doe"
+        role : "farmer"
+        location : "Punjab, India"
     }
-    object tomatoCrop {
-        id = "c456"
-        crop_name = "Tomato"
-        status = "planted"
-        planting_date = "2024-01-15"
+    class tomatoCrop {
+        id : "c456"
+        crop_name : "Tomato"
+        status : "planted"
+        planting_date : "2024-01-15"
     }
-    object blightReport {
-        id = "r789"
-        pest_name = "Late Blight"
-        confidence = 0.95
-        severity = "high"
-        created_at = "2024-03-20"
+    class blightReport {
+        id : "r789"
+        pest_name : "Late Blight"
+        confidence : 0.95
+        severity : "high"
+        created_at : "2024-03-20"
     }
-    object marketPrice {
-        id = "m101"
-        crop_name = "Tomato"
-        price = 45.50
-        unit = "kg"
-        market = "Local Mandi"
+    class marketPrice {
+        id : "m101"
+        crop_name : "Tomato"
+        price : 45.50
+        unit : "kg"
+        market : "Local Mandi"
     }
 
     farmerJohn -- tomatoCrop : owns
