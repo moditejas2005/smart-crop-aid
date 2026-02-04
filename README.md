@@ -246,7 +246,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **Tejas Modi**
 - GitHub: [@moditejas2005](https://github.com/moditejas2005)
-- Email: moditejas2005@gmail.com
+- Email: tejasmodi666@gmail.com
 - Project: [Smart Crop Aid](https://github.com/moditejas2005/smart-crop-aid)
 
 ---
