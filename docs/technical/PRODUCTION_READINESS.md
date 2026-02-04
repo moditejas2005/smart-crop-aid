@@ -296,5 +296,5 @@ socket.on('price-update', (data) => {
 ---
 
 <p align="center">
-Smart Crop Aid v1.0.0 | December 2024
+Smart Crop Aid v1.0.0 | December 2025
 </p>

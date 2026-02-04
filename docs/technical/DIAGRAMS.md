@@ -599,14 +599,14 @@ classDiagram
         id : "c456"
         crop_name : "Tomato"
         status : "planted"
-        planting_date : "2024-01-15"
+        planting_date : "2025-01-15"
     }
     class blightReport {
         id : "r789"
         pest_name : "Late Blight"
         confidence : 0.95
         severity : "high"
-        created_at : "2024-03-20"
+        created_at : "2025-03-20"
     }
     class marketPrice {
         id : "m101"
