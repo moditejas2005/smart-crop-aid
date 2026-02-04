@@ -1,5 +1,13 @@
 # Smart Crop Aid APK
 
+<p align="center">
+  <img src="../assets/images/WhatsApp Image 2026-02-04 at 8.21.01 PM.jpeg" alt="Smart Crop Aid Login Screen" width="300">
+</p>
+
+<p align="center"><i>Smart Crop Advisory - Your Digital Farm Assistant</i></p>
+
+---
+
 ## Download
 
 ### Download from GitHub Release ⭐
