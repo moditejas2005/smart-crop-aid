@@ -375,6 +375,8 @@ classDiagram
         +Date expectedHarvestDate
         +CropStatus status
         +Decimal area
+        +Decimal lat
+        +Decimal lng
         +String soilType
         +create(cropData) Crop
         +update(data) Crop
@@ -392,6 +394,9 @@ classDiagram
         +String description
         +String aiAnalysis
         +String treatmentRecommended
+        +TreatmentStatus treatmentStatus
+        +Decimal lat
+        +Decimal lng
         +create(reportData) PestReport
         +getByUser(userId) PestReport[]
     }
@@ -561,7 +566,7 @@ flowchart TD
 
 ---
 
-## 7. Diagram Legend
+## 8. Diagram Legend
 
 | Symbol | Meaning |
 |--------|---------|
@@ -574,6 +579,48 @@ flowchart TD
 | `-->` | Data Flow / Control Flow |
 | `<-->` | Bidirectional Flow |
 | `-.->` | Dependency |
+
+---
+
+
+## 7. Object Diagram
+
+### 7.1 Runtime Snapshot (Farmer Scenario)
+
+```mermaid
+classDiagram
+    object farmerJohn {
+        id = "u123"
+        name = "John Doe"
+        role = "farmer"
+        location = "Punjab, India"
+    }
+    object tomatoCrop {
+        id = "c456"
+        crop_name = "Tomato"
+        status = "planted"
+        planting_date = "2024-01-15"
+    }
+    object blightReport {
+        id = "r789"
+        pest_name = "Late Blight"
+        confidence = 0.95
+        severity = "high"
+        created_at = "2024-03-20"
+    }
+    object marketPrice {
+        id = "m101"
+        crop_name = "Tomato"
+        price = 45.50
+        unit = "kg"
+        market = "Local Mandi"
+    }
+
+    farmerJohn -- tomatoCrop : owns
+    farmerJohn -- blightReport : creates
+    tomatoCrop -- blightReport : refers_to
+    farmerJohn ..> marketPrice : views
+```
 
 ---
 
