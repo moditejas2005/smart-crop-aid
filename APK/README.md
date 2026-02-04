@@ -2,10 +2,45 @@
 
 ## Download
 
-**File**: `Smart Crop Aid.apk`  
-**Size**: ~76 MB  
-**Version**: 1.0.0  
-**Build Date**: February 2026
+### Download from GitHub Release ⭐
+
+[![Download APK](https://img.shields.io/badge/Download-APK-success?style=for-the-badge&logo=android&logoColor=white)](https://github.com/moditejas2005/smart-crop-aid/releases/latest/download/Smart%20Crop%20Aid.apk)
+
+**Latest Release**: [v1.0.0](https://github.com/moditejas2005/smart-crop-aid/releases/latest)
+
+### File Information
+- **File**: `Smart Crop Aid.apk`  
+- **Size**: ~76 MB  
+- **Version**: 1.0.0  
+- **Build Date**: February 2026
+
+> [!TIP]
+> **Also available on [GitHub Store](https://github.com/rainxchzed/Github-Store)** 📱  
+> Your app will appear automatically in GitHub Store within a few hours!
+
+### Alternative Download Methods
+
+<details>
+<summary>Click to expand other download options</summary>
+
+**Option 1: Direct Download Link**
+- **Click here**: [Download Smart Crop Aid.apk](https://github.com/moditejas2005/smart-crop-aid/raw/main/APK/Smart%20Crop%20Aid.apk)
+- Downloads directly to your device
+
+**Option 2: From GitHub Repository**
+1. Go to [GitHub Repository](https://github.com/moditejas2005/smart-crop-aid)
+2. Navigate to the `APK` folder
+3. Click on `Smart Crop Aid.apk`
+4. Click the **Download** button
+
+**Option 3: Clone Repository**
+```bash
+git clone https://github.com/moditejas2005/smart-crop-aid.git
+cd smart-crop-aid/APK
+# Transfer "Smart Crop Aid.apk" to your Android device
+```
+
+</details>
 
 ---
 
@@ -94,6 +129,21 @@ All services are **online and operational** ✅
 
 ## Troubleshooting
 
+### "Unable to view file" on GitHub
+**Problem**: When clicking the APK file on GitHub, you see "Unable to view file - This could be because the file is too large, or because this type of file is not supported."
+
+**Solution**: This is **normal behavior** - GitHub cannot preview APK files. Use one of these methods:
+
+1. **Use the Direct Download Link** (Option 1 above) - This is the easiest method
+2. Click "Open in Browser" button shown in the error message
+3. On desktop: Click the "Download" button on the file page
+4. Clone the repository and transfer the APK manually
+
+> [!TIP]
+> The direct download link (Option 1) always works and bypasses this error completely.
+
+---
+
 ### Installation Blocked
 **Problem**: "Install blocked" or "For security reasons..."  
 **Solution**: Enable "Unknown Sources" in Settings → Security
@@ -124,7 +174,7 @@ All services are **online and operational** ✅
 
 For issues or questions:
 - **GitHub**: [moditejas2005/smart-crop-aid](https://github.com/moditejas2005/smart-crop-aid)
-- **Email**: moditejas2005@gmail.com
+- **Email**: tejasmodi666@gmail.com
 
 ---
 

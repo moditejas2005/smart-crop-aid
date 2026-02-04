@@ -131,19 +131,50 @@ eas build --platform android --profile preview
 
 ---
 
-## � Download APK
+## 📲 Download APK
 
 **Pre-built APK available!** Skip the build process and install directly on your Android device.
 
-### Download
-- **File**: [`Smart Crop Aid.apk`](APK/Smart%20Crop%20Aid.apk)
+### Download from GitHub Release ⭐
+
+[![Download APK](https://img.shields.io/badge/Download-APK-success?style=for-the-badge&logo=android&logoColor=white)](https://github.com/moditejas2005/smart-crop-aid/releases/latest/download/Smart%20Crop%20Aid.apk)
+
+**Latest Release**: [v1.0.0](https://github.com/moditejas2005/smart-crop-aid/releases/latest)
+
 - **Size**: ~76 MB
 - **Version**: 1.0.0
 - **Build**: Production-ready with Vercel backend & HuggingFace ML API
 
+> [!TIP]
+> **Also available on [GitHub Store](https://github.com/rainxchzed/Github-Store)** 📱  
+> Browse and install with one click using the GitHub Store app!
+
+### Alternative Download Methods
+
+<details>
+<summary>Click to expand alternative download options</summary>
+
+**Option 1: Direct Download Link**
+- **Click here**: [Download Smart Crop Aid.apk](https://github.com/moditejas2005/smart-crop-aid/raw/main/APK/Smart%20Crop%20Aid.apk)
+- Downloads directly to your device (mobile & desktop)
+
+**Option 2: From APK Folder**
+1. Navigate to the [`APK`](./APK) folder in this repository
+2. Click on `Smart Crop Aid.apk`
+3. Click the **Download** button (top right)
+
+**Option 3: Clone Repository**
+```bash
+git clone https://github.com/moditejas2005/smart-crop-aid.git
+cd smart-crop-aid/APK
+# Transfer "Smart Crop Aid.apk" to your Android device
+```
+
+</details>
+
 ### Installation Steps
 
-1. **Download** the APK file to your Android device
+1. **Download** the APK file to your Android device using one of the methods above
 2. **Enable Unknown Sources**:
    - Go to Settings → Security → Unknown Sources
    - Or when prompted, tap "Settings" → "Allow from this source"
@@ -164,6 +195,8 @@ eas build --platform android --profile preview
 
 > [!NOTE]
 > The APK is signed and ready for production use. All backend services are live and operational.
+> 
+> **Download not working?** Try Option 2 (Direct Download Link) or clone the repository (Option 3).
 
 ---
 
