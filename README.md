@@ -8,6 +8,7 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16+-336791?logo=postgresql)](https://neon.tech/)
 [![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?logo=vercel)](https://vercel.com/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.17-FF6F00?logo=tensorflow)](https://tensorflow.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ---
 
 ## 📋 Overview
@@ -49,7 +50,59 @@
 
 ---
 
+## 📁 Project Structure
+
+```
+smart-crop-aid/
+├── 📱 Frontend (React Native + Expo)
+│   ├── app/              # Screens (Home, Pest Detection, Profile, etc.)
+│   ├── components/       # Reusable UI components
+│   ├── contexts/         # React contexts (AuthContext)
+│   ├── hooks/            # Custom React hooks
+│   ├── utils/            # Utility functions
+│   ├── types/            # TypeScript type definitions
+│   ├── constants/        # App constants
+│   └── assets/           # Images, fonts, icons
+│
+├── 🔧 Backend (Node.js + Express)
+│   └── backend/
+│       ├── routes/       # API routes (auth, pests, crops, etc.)
+│       ├── utils/        # Backend utilities (emailService, etc.)
+│       └── ...
+│
+├── 📚 Documentation
+│   └── docs/
+│       ├── deployment/   # Deployment guides (Vercel, APK build)
+│       ├── security/     # Security documentation
+│       ├── guides/       # Setup and troubleshooting guides
+│       ├── technical/    # Architecture and analysis docs
+│       └── references/   # Reference materials
+│
+├── 🛠️ Scripts
+│   └── scripts/
+│       ├── setup/        # Installation and environment setup
+│       ├── database/     # Database utilities and migrations
+│       ├── verification/ # Testing and verification scripts
+│       ├── deployment/   # Deployment automation
+│       └── utilities/    # Miscellaneous tools
+│
+└── ⚙️ Configuration
+    ├── package.json      # Dependencies
+    ├── tsconfig.json     # TypeScript config
+    ├── app.json          # Expo config
+    ├── eas.json          # EAS Build config
+    ├── schema.sql        # Database schema
+    └── .env              # Environment variables
+```
+
+---
+
 ## 🚀 Quick Start (Production)
+
+**Option 1: Download Pre-built APK** (Recommended)
+- See [📲 Download APK](#-download-apk) section below for direct installation
+
+**Option 2: Run from Source**
 
 To run this project, you just need the **Mobile App** since the Backend and ML API are deployed.
 
@@ -78,7 +131,43 @@ eas build --platform android --profile preview
 
 ---
 
-## 📱 Features & Verification
+## � Download APK
+
+**Pre-built APK available!** Skip the build process and install directly on your Android device.
+
+### Download
+- **File**: [`Smart Crop Aid.apk`](APK/Smart%20Crop%20Aid.apk)
+- **Size**: ~76 MB
+- **Version**: 1.0.0
+- **Build**: Production-ready with Vercel backend & HuggingFace ML API
+
+### Installation Steps
+
+1. **Download** the APK file to your Android device
+2. **Enable Unknown Sources**:
+   - Go to Settings → Security → Unknown Sources
+   - Or when prompted, tap "Settings" → "Allow from this source"
+3. **Install**: Tap the downloaded APK file and follow the prompts
+4. **Open**: Launch Smart Crop Aid from your app drawer
+
+### Test Credentials
+- **Create a new farmer account** during first launch
+- Or use the registration form to sign up
+
+### Verify Installation
+- ✅ Create a new farmer account
+- ✅ Login successfully
+- ✅ Test Pest Detection (camera/gallery upload)
+- ✅ Check Crop Recommendations
+- ✅ View Market Prices
+- ✅ Check Weather widget
+
+> [!NOTE]
+> The APK is signed and ready for production use. All backend services are live and operational.
+
+---
+
+## �📱 Features & Verification
 
 ### For Farmers
 
@@ -123,17 +212,42 @@ eas build --platform android --profile preview
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+We welcome contributions! Here's how you can help:
+
+1. **Fork** the repository
+2. **Create** your feature branch (`git checkout -b feature/AmazingFeature`)
+3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** to the branch (`git push origin feature/AmazingFeature`)
+5. **Open** a Pull Request
+
+### Contribution Guidelines
+- Follow existing code style and conventions
+- Add tests for new features
+- Update documentation as needed
+- Ensure all tests pass before submitting PR
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+**What this means:**
+- ✅ Free to use for personal and commercial projects
+- ✅ Modify and distribute as you wish
+- ✅ No warranty or liability
+- ⚠️ Must include original copyright notice
+
+---
+
+## 👨‍💻 Author
+
+**Tejas Modi**
+- GitHub: [@moditejas2005](https://github.com/moditejas2005)
+- Email: moditejas2005@gmail.com
+- Project: [Smart Crop Aid](https://github.com/moditejas2005/smart-crop-aid)
 
 ---
 

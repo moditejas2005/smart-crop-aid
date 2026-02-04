@@ -1,6 +1,18 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
-# dependencies
+# Environment Variables (CRITICAL - Never commit these!)
+.env
+.env*.local
+backend/.env
+backend/.env.local
+backend/.env.production
+
+# Sensitive files
+ADMIN_CREDENTIALS.txt
+*.pem
+*.key
+
+# Dependencies
 node_modules/
 
 # Expo
@@ -14,7 +26,6 @@ expo-env.d.ts
 *.jks
 *.p8
 *.p12
-*.key
 *.mobileprovision
 /android
 /ios
@@ -22,143 +33,20 @@ expo-env.d.ts
 # Metro
 .metro-health-check*
 
-# debug
+# Debug
 yarn-debug.*
-
-# NPM
 npm-debug.log
 yarn-error.log
 yarn.lock*
 
 # macOS
 .DS_Store
-*.pem
 
-# local env files
-.env
-.env*.local
-
-# Sensitive files
-ADMIN_CREDENTIALS.txt
-
-# typescript
+# TypeScript
 *.tsbuildinfo
+
+# Vercel
 .vercel
-*.keras 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
-*.keras 
-node_modules/ 
-.env 
+
+# ML Models
+*.keras
