@@ -18,7 +18,7 @@
     "morgan": "^1.10.0",
     "multer": "^2.0.2",
     "multer-storage-cloudinary": "^4.0.0",
-    "nodemailer": "^6.9.16",
+    "nodemailer": "^8.0.4",
     "pg": "^8.16.3"
   },
   "devDependencies": {
